@@ -28,7 +28,7 @@ shopAllUrl = shopAllHtmlFile.geturl()
 shopAllInfo = shopAllHtmlFile.info()
 shopAllCode = shopAllHtmlFile.getcode()
 
-print(shopAllHtmlText)
+#print(shopAllHtmlText)
 print(shopAllUrl)
 print(shopAllInfo)
 print(shopAllCode)
@@ -36,7 +36,7 @@ print(shopAllCode)
 
 #webbrowser.open(shopAllUrl, new=2)
 
-matches = re.search('src="([^"]+)"', shopAllHtmlText)
+urls = re.findall(r'href=[\'"]?([^\'" >]+)', str(shopAllHtmlText))
 print(matches)
 
 #Get all the links in the all page
